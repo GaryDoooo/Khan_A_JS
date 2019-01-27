@@ -1,0 +1,21 @@
+body {
+font-family: sans-serif;
+background-color: pink;
+border: 2px solid Gray;
+border-radius: 46px;
+}
+h1 {
+    font-size: 80px;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+p {
+    font-size: 65px;
+}
+html {
+background:radial-gradient(circle,yellow,yellow 50%, black 50%,yellow);
+background-size: 28px;
+}

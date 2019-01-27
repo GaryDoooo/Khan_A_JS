@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<!-- Taken from https://khanacademy.org/cs/i/5157014494511104, from pamela, from DillingerLee -->
+
+<html> 
+ <head>
+    <title>Processing.JS inside Webpages: Template</title> 
+</head>
+ <body>
+    <p align="center"> 
+	<!--This draws the Canvas on the webpage -->
+      <canvas id="mycanvas"></canvas> 
+    </p>
+ </body>
+ 
+ <!-- Run all the JavaScript stuff -->
+ <!-- Include the processing.js library from 
+ https://raw.githubusercontent.com/Khan/processing-js/master/processing.js
+ -->
+ <script src="../processing.js"></script> 
+ <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
+ <script>
+    var sketchProc = function(processingInstance) {
+      with (processingInstance) {
+    size(400, 400); 
+    frameRate(30);
+    
+////////// Program Code Goes Under Here ////////////
+var filePath = "try2.js"; //e.g. http://www.google.com/file.txt
+xmlhttp = new XMLHttpRequest();
+xmlhttp.open("GET",filePath,false);
+xmlhttp.send();
+var fileContent = xmlhttp.responseText;
+//var fs = require('fs');
+//var text = fs.readFileSync(filePath);
+console.log(fileContent);
+//document.body.innerHTML=fileContent;
+
+eval(fileContent);
+ 
+////////// Kids code go above here..////////////
+}};
+// Get the canvas that Processing-js will use
+    var canvas = document.getElementById("mycanvas"); 
+    // Pass the function sketchProc (defined in myCode.js) to Processing's constructor.
+    var processingInstance = new Processing(canvas, sketchProc); 
+
+ </script>
+
+</html>
