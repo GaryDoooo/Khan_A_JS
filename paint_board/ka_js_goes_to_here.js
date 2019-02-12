@@ -1,6 +1,7 @@
 var pen_color_R = 150;
 var pen_color_G = 180;
 var pen_color_B = 180;
+var thick = 20;
 
 var drawcolorbuttonmeowmeowmeowmeowmeowmeomwomeoemowmeowemeowmeowmeowmewoemeowmeommeowmeowmeowmeowmeowmeow=function(){
 stroke(0,0,0);
@@ -19,6 +20,19 @@ rect(290,0,50,50);
 textSize(15);
 fill(0,0,0);
 text("Eraser",295,30);
+//thick brush
+fill(240,240,240);
+rect(350,0,50,50);
+textSize(15);
+fill(0,0,0);
+text(" Thick \n Brush",350,30);
+//thin brush
+fill(240,240,240);
+rect(410,0,50,50);
+textSize(15);
+fill(0,0,0);
+text(" Thin\n Brush", 410,30);
+
 };
 
 var resetbutton = function() {
@@ -37,13 +51,16 @@ var resetbutton = function() {
 
 };
 
+    
+
+
 resetbutton();
     
 draw = function() {
     noStroke();
     fill(pen_color_R,pen_color_G,pen_color_B);
     if(mouseY>55 && mouseIsPressed){
-    ellipse(mouseX, mouseY, 20, 20);
+    ellipse(mouseX, mouseY, thick, thick);
     }
     if(mouseY<50 && mouseIsPressed){
             if(mouseX<100){
@@ -68,6 +85,12 @@ draw = function() {
                 pen_color_B=240;
                 pen_color_G=240;
                 pen_color_R=240;
+            }
+            if(mouseX>350 && mouseX<350+50){
+                thick= 40
+            }
+            if(mouseX>410 && mouseX<410+50){
+                thick = 20
             }
     }
 };
