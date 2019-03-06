@@ -17,12 +17,12 @@
  <!-- Include the processing.js library from 
  https://raw.githubusercontent.com/Khan/processing-js/master/processing.js
  -->
- <script src="../processing.old.js"></script> 
+ <script src="../p5.min.js"></script> 
  <script>
     var sketchProc = function(processingInstance) {
       with (processingInstance) {
     size(600, 600); 
-    frameRate(60);
+    frameRate(30);
     
 ////////// Program Code Goes Under Here ////////////
 var filePath = "ka_js_goes_to_here.js"; //e.g. http://www.google.com/file.txt
@@ -33,7 +33,7 @@ var fileContent = xmlhttp.responseText;
 console.log(fileContent);
 
 eval(fileContent);
- 
+
 ////////// Kids code go above here..////////////
 }};
 // Get the canvas that Processing-js will use
