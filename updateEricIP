@@ -1,0 +1,17 @@
+#!/bin/bash
+filename="/home/du/public/index.html"
+a=$(ping -c 1 eric.vm | grep PING | xargs -d "(" -n1 | xargs -d ")" -n1 | grep -E '([0-9]{1,3}.?){4}')
+b=$(cat $filename | grep Eric | xargs -d '"' -n1 | xargs -d "'" -n1 | xargs -d "/" -n1| grep -E '([0-9]{1,3}.?){4}')
+newline="<a href='http://$a'>Server Eric.vm</a><br><br>"
+echo "Correct IP address: "$a
+echo "IP in index.html:   "$b
+
+if [ "$a" = "$b" ]
+then
+	echo "Same IP"
+else
+	echo "Not Same IP"
+	echo "Change to new line:"
+	echo $newline
+	sed -i '/Eric/c\'"$newline" "$filename"	&& echo "done"
+fi
