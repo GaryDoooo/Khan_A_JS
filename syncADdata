@@ -1,0 +1,42 @@
+#!/bin/bash
+
+work_dir="/home/du/public/ADdata"
+
+link_daily="http://eric.vm/dailyAD.html"
+link_hourly="http://eric.vm/hourlyAD.html"
+
+daily_file="dailyAD.html"
+hourly_file="hourlyAD.html"
+
+cd $work_dir
+
+remote_daily_size=$(curl -sI "$link_daily" | grep -i Content-Length | xargs -n1 | grep "^[0-9]" | tr -dc '0-9')
+echo "Remote daily file size "$remote_daily_size
+echo "remote number length "${#remote_daily_size}
+remote_hourly_size=$(curl -sI "$link_hourly" | grep -i Content-Length | xargs -n1 | grep "^[0-9]" | tr -dc '0-9')
+echo "Remote hourly file size "$remote_hourly_size
+
+local_daily_size=$(du -b $daily_file   | xargs -n1 | grep "^[0-9]" | tr -dc '0-9')
+local_hourly_size=$(du -b $hourly_file | xargs -n1 | grep "^[0-9]" | tr -dc '0-9')
+echo "Local daily file size "$local_daily_size
+echo "Local number length "${#local_daily_size}
+echo "Local hourly file size "$local_hourly_size
+################Get daily data ###################
+if [[ "$local_daily_size" == "$remote_daily_size" ]]
+then
+	echo "Daily file same, skip."
+else
+	echo "Daily file not same, and sync now."	
+	curl "$link_daily"  > $daily_file
+fi
+################Get hourly data #################
+if [ "$local_hourly_size" = "$remote_hourly_size" ]
+then
+	echo "hourly file same, skip."
+else
+	echo "hourly file not same, and sync now."	
+	curl "$link_hourly"  > $hourly_file
+fi
+
+
+
