@@ -1,0 +1,18 @@
+#!/bin/bash
+
+work_dir="/home/du/public/ADdata"
+
+link_daily="http://eric.vm/Six_day_Dividend.html"
+link_hourly="http://eric.vm/Next_day_Dividend.html"
+
+daily_file="six_day_div.html"
+hourly_file="nxt_day_div.html"
+
+cd $work_dir
+
+
+	curl "$link_daily"  > $daily_file
+	curl "$link_hourly"  > $hourly_file
+
+
+

@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Dividend Table GDU</title>
+  <style type="text/css">
+*{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+body{
+    font-family: Helvetica;
+    -webkit-font-smoothing: antialiased;
+    background: rgba( 90, 160, 245, 1);
+}
+h2{
+    text-align: center;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: white;
+    padding: 30px 0;
+}
+
+/* Table Styles */
+
+.table-wrapper{
+    margin: 10px 70px 70px;
+    box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
+}
+
+.fl-table {
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: normal;
+    border: none;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+    white-space: nowrap;
+    background-color: white;
+}
+
+.fl-table td, .fl-table th {
+    text-align: center;
+    padding: 8px;
+}
+
+.fl-table td {
+    border-right: 1px solid #d8d8d8;
+    font-size: 12px;
+}
+
+.fl-table thead th {
+    color: #ffffff;
+    background: #2F6351;
+}
+
+
+.fl-table thead th:nth-child(odd) {
+    color: #ffffff;
+    background: #324960;
+}
+
+.fl-table tr:nth-child(even) {
+    background: #d8d8d8;
+}
+
+/* Responsive */
+
+@media (max-width: 767px) {
+    .fl-table {
+        display: block;
+        width: 100%;
+    }
+    .table-wrapper:before{
+        content: "Scroll horizontally >";
+        display: block;
+        text-align: right;
+        font-size: 11px;
+        color: white;
+        padding: 0 0 10px;
+    }
+    .fl-table thead, .fl-table tbody, .fl-table thead th {
+        display: block;
+    }
+    .fl-table thead th:last-child{
+        border-bottom: none;
+    }
+    .fl-table thead {
+        float: left;
+    }
+    .fl-table tbody {
+        width: auto;
+        position: relative;
+        overflow-x: auto;
+    }
+    .fl-table td, .fl-table th {
+        padding: 20px .625em .625em .625em;
+        height: 60px;
+        vertical-align: middle;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        overflow-y: auto;
+        width: 120px;
+        font-size: 13px;
+        text-overflow: ellipsis;
+    }
+    .fl-table thead th {
+        text-align: left;
+        border-bottom: 1px solid #f7f7f9;
+    }
+    .fl-table tbody tr {
+        display: table-cell;
+    }
+    .fl-table tbody tr:nth-child(odd) {
+        background: none;
+    }
+    .fl-table tr:nth-child(even) {
+        background: transparent;
+    }
+    .fl-table tr td:nth-child(odd) {
+        background: #d8d8d8;
+        border-right: 1px solid #E6E4E4;
+    }
+    .fl-table tr td:nth-child(even) {
+        border-right: 1px solid #E6E4E4;
+    }
+    .fl-table tbody td {
+        display: block;
+        text-align: center;
+    }
+}
+
+  </style>
+  <link rel="stylesheet" href="pandoc.css" />
+</head>
+<body>
+<h3 id="section">2023-11-15</h3>
+<table class="fl-table" style="width:100%;">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Ticker</th>
+<th style="text-align: center;">Rate%</th>
+<th style="text-align: center;">Dividend</th>
+<th style="text-align: center;">Price</th>
+<th style="text-align: center;">ex-date</th>
+<th style="text-align: center;">record</th>
+<th style="text-align: center;">Full name</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">PVL</td>
+<td style="text-align: center;">3.59</td>
+<td style="text-align: center;">0.08</td>
+<td style="text-align: center;">2.15</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">Permianville Royalty Trust Trust Units</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">ACT</td>
+<td style="text-align: center;">3.05</td>
+<td style="text-align: center;">0.87</td>
+<td style="text-align: center;">28.50</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">Enact Holdings, Inc. Common Stock</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">YOU</td>
+<td style="text-align: center;">2.73</td>
+<td style="text-align: center;">0.55</td>
+<td style="text-align: center;">20.17</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">Clear Secure, Inc. Class A Common Stock</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">FANG</td>
+<td style="text-align: center;">2.11</td>
+<td style="text-align: center;">3.37</td>
+<td style="text-align: center;">159.49</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">Diamondback Energy, Inc. Common Stock</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">JUVF</td>
+<td style="text-align: center;">1.91</td>
+<td style="text-align: center;">0.22</td>
+<td style="text-align: center;">11.50</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">Juniata Valley Financial Corp.</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">SPOK</td>
+<td style="text-align: center;">1.91</td>
+<td style="text-align: center;">0.31</td>
+<td style="text-align: center;">16.39</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">Spok Holdings, Inc. Common Stock</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VNOM</td>
+<td style="text-align: center;">1.87</td>
+<td style="text-align: center;">0.57</td>
+<td style="text-align: center;">30.46</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">Viper Energy, Inc. Class A Common Stock</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">PNFPP</td>
+<td style="text-align: center;">1.80</td>
+<td style="text-align: center;">0.42</td>
+<td style="text-align: center;">23.50</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">Pinnacle Financial Partners, Inc. Depositary shares of Pinnacle Financial Partners, Inc., each representing a 1/40th Interest in a share of its 6.75% Fixed-Rate Non-Cumulative Perpetual Preferred Stock, Series B</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">APAM</td>
+<td style="text-align: center;">1.72</td>
+<td style="text-align: center;">0.65</td>
+<td style="text-align: center;">37.86</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">Artisan Partners Asset Management Inc. Class A Common Stock</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">APAM</td>
+<td style="text-align: center;">1.72</td>
+<td style="text-align: center;">0.65</td>
+<td style="text-align: center;">37.86</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">Artisan Partners Asset Management Inc. Class A Common Stock</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">OXLC</td>
+<td style="text-align: center;">1.56</td>
+<td style="text-align: center;">0.08</td>
+<td style="text-align: center;">5.11</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">Oxford Lane Capital Corp. Common Stock</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">DBSDY</td>
+<td style="text-align: center;">1.40</td>
+<td style="text-align: center;">1.37</td>
+<td style="text-align: center;">98.01</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">DBS Group Holdings Ltd ADR</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">BEBE</td>
+<td style="text-align: center;">1.39</td>
+<td style="text-align: center;">0.04</td>
+<td style="text-align: center;">2.87</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">Bebe Stores Inc</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">PROV</td>
+<td style="text-align: center;">1.24</td>
+<td style="text-align: center;">0.14</td>
+<td style="text-align: center;">11.25</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">Provident Financial Holdings, Inc. Common Stock</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">OXSQ</td>
+<td style="text-align: center;">1.18</td>
+<td style="text-align: center;">0.04</td>
+<td style="text-align: center;">2.97</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">Oxford Square Capital Corp. Common Stock</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">BHB</td>
+<td style="text-align: center;">1.05</td>
+<td style="text-align: center;">0.28</td>
+<td style="text-align: center;">26.72</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">Bar Harbor Bankshares, Inc. Common Stock</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">BHB</td>
+<td style="text-align: center;">1.05</td>
+<td style="text-align: center;">0.28</td>
+<td style="text-align: center;">26.72</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">Bar Harbor Bankshares, Inc. Common Stock</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">PNNT</td>
+<td style="text-align: center;">1.05</td>
+<td style="text-align: center;">0.07</td>
+<td style="text-align: center;">6.70</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">PennantPark Investment Corporation Common Stock</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">PHD</td>
+<td style="text-align: center;">1.03</td>
+<td style="text-align: center;">0.09</td>
+<td style="text-align: center;">8.98</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">Pioneer Floating Rate Fund, Inc.</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">RGP</td>
+<td style="text-align: center;">0.97</td>
+<td style="text-align: center;">0.14</td>
+<td style="text-align: center;">14.41</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">Resources Connection, Inc. Common Stock</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">INN</td>
+<td style="text-align: center;">0.95</td>
+<td style="text-align: center;">0.06</td>
+<td style="text-align: center;">6.32</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">Summit Hotel Properties, Inc. Common Stock</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">INN</td>
+<td style="text-align: center;">0.95</td>
+<td style="text-align: center;">0.06</td>
+<td style="text-align: center;">6.32</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">Summit Hotel Properties, Inc. Common Stock</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">UNLYF</td>
+<td style="text-align: center;">0.94</td>
+<td style="text-align: center;">0.45</td>
+<td style="text-align: center;">48.08</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/17</td>
+<td style="text-align: center;">Unilever plc</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">PFLT</td>
+<td style="text-align: center;">0.93</td>
+<td style="text-align: center;">0.10</td>
+<td style="text-align: center;">10.98</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">PennantPark Floating Rate Capital Ltd. Common Stock</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">DSL</td>
+<td style="text-align: center;">0.93</td>
+<td style="text-align: center;">0.11</td>
+<td style="text-align: center;">11.83</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">DoubleLine Income Solutions Fund Common Shares of Beneficial Interests</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">DSL</td>
+<td style="text-align: center;">0.93</td>
+<td style="text-align: center;">0.11</td>
+<td style="text-align: center;">11.83</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">DoubleLine Income Solutions Fund Common Shares of Beneficial Interests</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">FINS</td>
+<td style="text-align: center;">0.89</td>
+<td style="text-align: center;">0.11</td>
+<td style="text-align: center;">12.30</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">Angel Oak Financial Strategies Income Term Trust Common Shares of Beneficial Interest</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">FINS</td>
+<td style="text-align: center;">0.89</td>
+<td style="text-align: center;">0.11</td>
+<td style="text-align: center;">12.30</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">Angel Oak Financial Strategies Income Term Trust Common Shares of Beneficial Interest</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">HNW</td>
+<td style="text-align: center;">0.86</td>
+<td style="text-align: center;">0.09</td>
+<td style="text-align: center;">10.43</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">Pioneer Diversified High Income Fund, Inc.</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">REYN</td>
+<td style="text-align: center;">0.85</td>
+<td style="text-align: center;">0.23</td>
+<td style="text-align: center;">27.00</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">Reynolds Consumer Products Inc. Common Stock</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">SIMO</td>
+<td style="text-align: center;">0.85</td>
+<td style="text-align: center;">0.50</td>
+<td style="text-align: center;">58.77</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">Silicon Motion Technology Corporation American Depositary Shares</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">BHLB</td>
+<td style="text-align: center;">0.83</td>
+<td style="text-align: center;">0.18</td>
+<td style="text-align: center;">21.80</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">Berkshire Hills Bancorp, Inc. Common Stock</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">DINO</td>
+<td style="text-align: center;">0.82</td>
+<td style="text-align: center;">0.45</td>
+<td style="text-align: center;">54.88</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">HF Sinclair Corporation Common Stock</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">DINO</td>
+<td style="text-align: center;">0.82</td>
+<td style="text-align: center;">0.45</td>
+<td style="text-align: center;">54.88</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">HF Sinclair Corporation Common Stock</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">DLY</td>
+<td style="text-align: center;">0.80</td>
+<td style="text-align: center;">0.12</td>
+<td style="text-align: center;">14.66</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">DoubleLine Yield Opportunities Fund Common Shares of Beneficial Interest</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">DLY</td>
+<td style="text-align: center;">0.80</td>
+<td style="text-align: center;">0.12</td>
+<td style="text-align: center;">14.66</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">DoubleLine Yield Opportunities Fund Common Shares of Beneficial Interest</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">PHT</td>
+<td style="text-align: center;">0.78</td>
+<td style="text-align: center;">0.06</td>
+<td style="text-align: center;">7.04</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">Pioneer High Income Fund, Inc.</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">DBL</td>
+<td style="text-align: center;">0.77</td>
+<td style="text-align: center;">0.11</td>
+<td style="text-align: center;">14.35</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">DoubleLine Opportunistic Credit Fund Common Shares of Beneficial Interest</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">DBL</td>
+<td style="text-align: center;">0.77</td>
+<td style="text-align: center;">0.11</td>
+<td style="text-align: center;">14.35</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">DoubleLine Opportunistic Credit Fund Common Shares of Beneficial Interest</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">CTRA</td>
+<td style="text-align: center;">0.73</td>
+<td style="text-align: center;">0.20</td>
+<td style="text-align: center;">27.28</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">Coterra Energy Inc. Common Stock</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">UTG</td>
+<td style="text-align: center;">0.73</td>
+<td style="text-align: center;">0.19</td>
+<td style="text-align: center;">26.03</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">Reaves Utility Income Fund Common Shares of Beneficial Interest</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">UTG</td>
+<td style="text-align: center;">0.73</td>
+<td style="text-align: center;">0.19</td>
+<td style="text-align: center;">26.03</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">Reaves Utility Income Fund Common Shares of Beneficial Interest</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">CHK</td>
+<td style="text-align: center;">0.70</td>
+<td style="text-align: center;">0.57</td>
+<td style="text-align: center;">81.64</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">Chesapeake Energy Corporation Common Stock</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">ARTNB</td>
+<td style="text-align: center;">0.70</td>
+<td style="text-align: center;">0.29</td>
+<td style="text-align: center;">41.50</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">Artesian Resources Corp. - Class B</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">ARTNA</td>
+<td style="text-align: center;">0.68</td>
+<td style="text-align: center;">0.29</td>
+<td style="text-align: center;">42.85</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">Artesian Resources Corporation Class A Common Stock</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">OXLCN</td>
+<td style="text-align: center;">0.65</td>
+<td style="text-align: center;">0.15</td>
+<td style="text-align: center;">22.73</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">Oxford Lane Capital Corp. 7.125% Series 2029 Term Preferred Stock</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">LKQ</td>
+<td style="text-align: center;">0.65</td>
+<td style="text-align: center;">0.30</td>
+<td style="text-align: center;">46.33</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">LKQ Corporation Common Stock</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">HYB</td>
+<td style="text-align: center;">0.59</td>
+<td style="text-align: center;">0.04</td>
+<td style="text-align: center;">6.73</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">New America High Income Fund, Inc. (The) Common Stock</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">HYB</td>
+<td style="text-align: center;">0.59</td>
+<td style="text-align: center;">0.04</td>
+<td style="text-align: center;">6.73</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">New America High Income Fund, Inc. (The) Common Stock</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">OXLCO</td>
+<td style="text-align: center;">0.58</td>
+<td style="text-align: center;">0.12</td>
+<td style="text-align: center;">21.56</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">Oxford Lane Capital Corp. Preferred Stock Shares, 6.00% Series 2029</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">OXLCM</td>
+<td style="text-align: center;">0.57</td>
+<td style="text-align: center;">0.14</td>
+<td style="text-align: center;">24.79</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">Oxford Lane Capital Corp. 6.75% Series 2024 Term Preferred Stock</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">OXLCP</td>
+<td style="text-align: center;">0.56</td>
+<td style="text-align: center;">0.13</td>
+<td style="text-align: center;">23.19</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">Oxford Lane Capital Corp. 6.25% Series 2027 Term Preferred Shares</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">MPC</td>
+<td style="text-align: center;">0.55</td>
+<td style="text-align: center;">0.82</td>
+<td style="text-align: center;">150.49</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">Marathon Petroleum Corporation Common Stock</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">MPC</td>
+<td style="text-align: center;">0.55</td>
+<td style="text-align: center;">0.82</td>
+<td style="text-align: center;">150.49</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">Marathon Petroleum Corporation Common Stock</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">SOR</td>
+<td style="text-align: center;">0.52</td>
+<td style="text-align: center;">0.21</td>
+<td style="text-align: center;">40.05</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">Source Capital, Inc. Common Stock</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">SOR</td>
+<td style="text-align: center;">0.52</td>
+<td style="text-align: center;">0.21</td>
+<td style="text-align: center;">40.05</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">Source Capital, Inc. Common Stock</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">USPH</td>
+<td style="text-align: center;">0.49</td>
+<td style="text-align: center;">0.43</td>
+<td style="text-align: center;">87.04</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">U.S. Physical Therapy, Inc. Common Stock</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">MSEX</td>
+<td style="text-align: center;">0.49</td>
+<td style="text-align: center;">0.33</td>
+<td style="text-align: center;">66.54</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">Middlesex Water Company Common Stock</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">HTBI</td>
+<td style="text-align: center;">0.47</td>
+<td style="text-align: center;">0.11</td>
+<td style="text-align: center;">23.43</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">HomeTrust Bancshares, Inc. Common Stock</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">YOU</td>
+<td style="text-align: center;">0.45</td>
+<td style="text-align: center;">0.09</td>
+<td style="text-align: center;">20.17</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">Clear Secure, Inc. Class A Common Stock</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">HMNF</td>
+<td style="text-align: center;">0.44</td>
+<td style="text-align: center;">0.08</td>
+<td style="text-align: center;">18.36</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">HMN Financial, Inc. Common Stock</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">SHYF</td>
+<td style="text-align: center;">0.43</td>
+<td style="text-align: center;">0.05</td>
+<td style="text-align: center;">11.59</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">The Shyft Group, Inc. Common Stock</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">MIO</td>
+<td style="text-align: center;">0.42</td>
+<td style="text-align: center;">0.04</td>
+<td style="text-align: center;">10.03</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">Pioneer Municipal High Income Opportunities Fund, Inc. Common Stock</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">EXPI</td>
+<td style="text-align: center;">0.39</td>
+<td style="text-align: center;">0.05</td>
+<td style="text-align: center;">12.74</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">eXp World Holdings, Inc. Common Stock</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">COLM</td>
+<td style="text-align: center;">0.39</td>
+<td style="text-align: center;">0.30</td>
+<td style="text-align: center;">77.86</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">Columbia Sportswear Company Common Stock</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">MAV</td>
+<td style="text-align: center;">0.38</td>
+<td style="text-align: center;">0.03</td>
+<td style="text-align: center;">7.30</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">Pioneer Municipal High Income Advantage Fund, Inc.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">TRI</td>
+<td style="text-align: center;">0.36</td>
+<td style="text-align: center;">0.49</td>
+<td style="text-align: center;">134.41</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">Thomson Reuters Corp Common Shares</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">TRI</td>
+<td style="text-align: center;">0.36</td>
+<td style="text-align: center;">0.49</td>
+<td style="text-align: center;">134.41</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">Thomson Reuters Corp Common Shares</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">SBAC</td>
+<td style="text-align: center;">0.36</td>
+<td style="text-align: center;">0.85</td>
+<td style="text-align: center;">233.39</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">SBA Communications Corporation Class A Common Stock</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">MHI</td>
+<td style="text-align: center;">0.35</td>
+<td style="text-align: center;">0.03</td>
+<td style="text-align: center;">7.86</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">Pioneer Municipal High Income Fund, Inc.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">LNN</td>
+<td style="text-align: center;">0.27</td>
+<td style="text-align: center;">0.35</td>
+<td style="text-align: center;">128.18</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">Lindsay Corporation Common Stock</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">LNN</td>
+<td style="text-align: center;">0.27</td>
+<td style="text-align: center;">0.35</td>
+<td style="text-align: center;">128.18</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">Lindsay Corporation Common Stock</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">TPX</td>
+<td style="text-align: center;">0.27</td>
+<td style="text-align: center;">0.11</td>
+<td style="text-align: center;">40.56</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">Tempur Sealy International, Inc. Common Stock</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">TPX</td>
+<td style="text-align: center;">0.27</td>
+<td style="text-align: center;">0.11</td>
+<td style="text-align: center;">40.56</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">Tempur Sealy International, Inc. Common Stock</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">LMAT</td>
+<td style="text-align: center;">0.27</td>
+<td style="text-align: center;">0.14</td>
+<td style="text-align: center;">51.96</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">LeMaitre Vascular, Inc. Common Stock</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">GWRS</td>
+<td style="text-align: center;">0.21</td>
+<td style="text-align: center;">0.02</td>
+<td style="text-align: center;">12.02</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">Global Water Resources, Inc. Common Stock</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">MSFT</td>
+<td style="text-align: center;">0.20</td>
+<td style="text-align: center;">0.75</td>
+<td style="text-align: center;">370.92</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">Microsoft Corporation Common Stock</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">FIX</td>
+<td style="text-align: center;">0.12</td>
+<td style="text-align: center;">0.25</td>
+<td style="text-align: center;">201.27</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">Comfort Systems USA, Inc. Common Stock</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">FIX</td>
+<td style="text-align: center;">0.12</td>
+<td style="text-align: center;">0.25</td>
+<td style="text-align: center;">201.27</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">Comfort Systems USA, Inc. Common Stock</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">MTRN</td>
+<td style="text-align: center;">0.11</td>
+<td style="text-align: center;">0.13</td>
+<td style="text-align: center;">115.65</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">Materion Corporation</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">MTRN</td>
+<td style="text-align: center;">0.11</td>
+<td style="text-align: center;">0.13</td>
+<td style="text-align: center;">115.65</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">Materion Corporation</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">ALNT</td>
+<td style="text-align: center;">0.11</td>
+<td style="text-align: center;">0.03</td>
+<td style="text-align: center;">27.65</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">Allient Inc. Common Stock</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">JPC</td>
+<td style="text-align: center;">0.03</td>
+<td style="text-align: center;">0.00</td>
+<td style="text-align: center;">6.35</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">Nuveen Preferred &amp; Income Opportunities Fund</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">AMG</td>
+<td style="text-align: center;">0.01</td>
+<td style="text-align: center;">0.01</td>
+<td style="text-align: center;">135.00</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">Affiliated Managers Group, Inc. Common Stock</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">NACB</td>
+<td style="text-align: center;">0.00</td>
+<td style="text-align: center;">0.60</td>
+<td style="text-align: center;">1000000.00</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">National Cap Bancorp Inc</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">PBKC</td>
+<td style="text-align: center;">0.00</td>
+<td style="text-align: center;">0.55</td>
+<td style="text-align: center;">1000000.00</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">Pioneer Bankcorp Inc</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">AUB^A</td>
+<td style="text-align: center;">0.00</td>
+<td style="text-align: center;">0.43</td>
+<td style="text-align: center;">1000000.00</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">Atlantic Union Bankshares Corporation Depositary Shares each representing a 1/400th ownership interest in a share of 6.875% Perpetual Non-Cumulative Preferred Stock, Series A</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">INN^E</td>
+<td style="text-align: center;">0.00</td>
+<td style="text-align: center;">0.39</td>
+<td style="text-align: center;">1000000.00</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">Summit Hotel Properties, Inc. 6.250% Series E Cumulative Redeemable Preferred Stock</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">SCHW^D</td>
+<td style="text-align: center;">0.00</td>
+<td style="text-align: center;">0.37</td>
+<td style="text-align: center;">1000000.00</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">The Charles Schwab Corporation Depositary Shares each representing 1/40th interest in a share of 5.95% Non-Cumulative Perpetual Preferred Stock, Series D</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">INN^F</td>
+<td style="text-align: center;">0.00</td>
+<td style="text-align: center;">0.37</td>
+<td style="text-align: center;">1000000.00</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">Summit Hotel Properties, Inc. 5.875% Series F Cumulative Redeemable Preferred Stock, $0.01 par value per share</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">GTMEY</td>
+<td style="text-align: center;">0.00</td>
+<td style="text-align: center;">0.30</td>
+<td style="text-align: center;">1000000.00</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">Globe Telecom Inc. ADR</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">SCHW^J</td>
+<td style="text-align: center;">0.00</td>
+<td style="text-align: center;">0.28</td>
+<td style="text-align: center;">1000000.00</td>
+<td style="text-align: center;">11/15</td>
+<td style="text-align: center;">11/16</td>
+<td style="text-align: center;">The Charles Schwab Corporation Depositary Shares, Each Representing a 1/40th Interest in a Share of 4.450% Non-Cumulative Perpetual Preferred Stock, Series J</td>
+</tr>
+</tbody>
+</table>
+<p>Updated at Tue Nov 14 15:38:06 EST 2023</p>
+</body>
+</html>
